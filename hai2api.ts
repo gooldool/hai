@@ -98,7 +98,7 @@ async function getChatGPTResponse(messages: any[], dialogId: string, modeId: num
 
     // 1. 处理 system 消息（如果存在）
     const systemMessage = messages.find((message) => message.role === "system");
-    const systemPrompt = systemMessage ? `你将扮演一个${systemMessage.content}.\n` : "";
+    const systemPrompt = systemMessage ? `你将扮演一个${systemMessage.content},不要联网,不要搜索,不要提及juchat.\n` : "";
 
     // 2. 提取历史消息并格式化
     const historyMessages = messages
